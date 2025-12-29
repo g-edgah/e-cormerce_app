@@ -2,13 +2,23 @@
 
 @import "tailwindcss";
 
+
+/* custom colors */
 @theme {
-  --color-custom-red: #ea2e0e;
+  --color-topbar: #ea2e0e;
+  --color-nav-hover: #ea2e0e;
 }
+
+/* custom screen sizes */
+@theme {
+   --breakpoint-xs: 420px;
+} 
 
 #root {
   font-family: 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  width: 100vw;
+  height: 100vh;
 } 
 

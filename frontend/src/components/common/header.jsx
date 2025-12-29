@@ -4,11 +4,11 @@ import CartDrawer from './cartDrawer.jsx';
 
 const Header = () => {
     return (
-        <>
+        <div classNmae="header mx-auto flex items-center justify-center">
             <TopBar />
             <NavBar />
             <CartDrawer />
-        </>
+        </div>
     )
 }
 

@@ -4,8 +4,8 @@ import  { RiTwitterXLine } from 'react-icons/ri';
 
 const TopBar = () => {
     return (
-        <div className='bg-custom-red text-white'>
-            <div className='container mx-auto flex justify-between items-center py-3 px-4'>
+        <div className='w-screen flex justify-around bg-topbar text-white'>
+            <div className='flex items-center justify-between py-2 pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full'>
                 <div className='hidden md:flex items-center space-x-4'>
                     <a href="#" className='hover:text-gray-300'>
                         <TbBrandMeta className='h-5 w-5'/>
