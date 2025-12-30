@@ -3,13 +3,17 @@ import { PiFlowerLotusLight } from "react-icons/pi";
 import { HiUser } from "react-icons/hi2";
 import { IoIosBasket } from "react-icons/io";
 import { BiMenu } from "react-icons/bi";
+import { useState } from 'react';
+
 import SearchBar from './searchBar';
 
 const NavBar = () => {
+    const [isSearch, setIsSearch] = useState(false);
+    
     return (
         <>
-            <div className="nav w-screen flex flex-col justify-around" >
-                <div className="flex items-center justify-between py-4 pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full">
+            <div className="nav w-screen flex flex-col justify-around pt-2 pb-1 md:pt-3 h-23 md:h-25">
+                <div className="flex items-center justify-between pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full">
                     {/* left */}
                     <div className='flex items-center space-x-4 '>
                         <button className='md:hidden'>
@@ -23,17 +27,20 @@ const NavBar = () => {
                     </div>
 
                     {/* center */}
-                    <div className="hidden md:flex space-x-6">
+                    {(!isSearch)&& (<div className="hidden md:flex space-x-6">
                         <Link className="text-700 hover:text-nav-hover text-sm font-medium" >bouquets</Link>
                         <Link className="text-700 hover:text-nav-hover text-sm font-medium" >flowers</Link>
                         <Link className="text-700 hover:text-nav-hover text-sm font-medium" >occassions</Link>
                         <Link className="text-700 hover:text-nav-hover text-sm font-medium" >colors</Link>
                         <Link className="text-700 hover:text-nav-hover text-sm font-medium" >popular</Link>
-                    </div>
+                    </div>)}
+                    
 
                     {/* right */}
                     <div className="flex items-center space-x-4">
-                        <SearchBar />
+                        <div className={`${isSearch ? 'hidden md:flex' : 'flex'}`}>
+                            <SearchBar isSearch={isSearch} setIsSearch={setIsSearch}/>
+                        </div>
                         <Link to='/profile' className="hover:text-nav-hover">
                             <HiUser className="h-6 w-6 text-black-700"/>
                         </Link>
@@ -45,8 +52,13 @@ const NavBar = () => {
                         
                     </div>  
                 </div>
+                <div className={`${isSearch ? 'flex md:hidden justify-center mt-2' : 'hidden'}`}>
+                    <SearchBar isSearch={isSearch} setIsSearch={setIsSearch}/>
+                </div>
+                    
+                
 
-                <div className="flex justify-around px-1 md:hidden xs:space-x-6 xs:items-center xs:justify-center pb-4">
+                <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center ${isSearch ? 'flex' : 'md:hidden'}`}>
                         <Link className="text-700 hover:text-nav-hover text-sm font-medium" >bouquets</Link>
                         <Link className="text-700 hover:text-nav-hover text-sm font-medium" >flowers</Link>
                         <Link className="text-700 hover:text-nav-hover text-sm font-medium" >occassions</Link>
