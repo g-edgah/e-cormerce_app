@@ -14,7 +14,7 @@ const NavBar = () => {
     
     return (
         <>
-            <div className={`nav w-screen flex flex-col justify-around pt-2 pb-1 md:pt-3 bg-gray-200 relative ${isSearch ? 'h-30 md:h-30' : 'h-23 md:h-23'}`} >
+            <div className={`nav w-screen flex flex-col justify-around pt-2 pb-1 md:pt-3 bg-gray-200 relative ${isSearch ? 'h-31 md:h-30' : 'h-23 md:h-23'}`} >
                 <div className="flex items-center justify-between pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full absolute top-1 md:top-7 h-10">
                     {/* left */}
                     <div className='flex items-center space-x-4 '>
