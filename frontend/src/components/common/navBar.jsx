@@ -30,7 +30,7 @@ const NavBar = () => {
     
     return (
         <>
-            <div className={`nav w-screen flex flex-col justify-around pt-2 pb-1 md:pt-3 bg-gray-200 relative transition-all duration-300 ease-in-out ${isSearch ? 'transition h-32 md:h-30' : 'h-23 md:h-23'}`} >
+            <div className={`nav w-screen flex flex-col justify-around items-center pt-2 pb-1 md:pt-3 bg-gray-200 relative transition-all duration-300 ease-in-out ${isSearch ? 'transition h-32 md:h-30' : 'h-23 md:h-23'}`} >
                 <div className="flex items-center justify-between pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full absolute top-2 md:top-7 h-10">
                     {/* left */}
                     <div className='flex items-center space-x-4 '>
@@ -45,7 +45,7 @@ const NavBar = () => {
                     </div>
 
                     {/* center */}
-                    {/* {(!isSearch) ? (<div className={`hidden space-x-6 md:hidden font-medium text-[15px] ${isSearchBar ? '' : 'md:flex'}`}>
+                    {/* {(!isSearch) ? (<div className={`hidden space-x-6 font-medium text-[15px] ${isSearchBar ? '' : 'md:flex'}`}>
                         <Link className="text-700 hover:text-nav-hover" >bouquets</Link>
                         <Link className="text-700 hover:text-nav-hover" >flowers</Link>
                         <Link className="text-700 hover:text-nav-hover" >occassions</Link>
@@ -89,15 +89,12 @@ const NavBar = () => {
                     
                 
 
-                <div className={`w-full flex justify-around items-center `} >
-                    <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute text-sm font-medium md:text-[15px] transition-all duration-300 ease-in-out ${isSearch ? 'flex bottom-3 md:pr-4 md:flex duration-0' : 'bottom-3 md:bottom-8 md:pr-4 '} ${isSearchBar ? '' : ''}`}>
+                <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute w-full md:w-110 text-sm font-medium md:text-[16px] transition-all duration-300 ease-in-out ${isSearch ? 'flex bottom-3 md:pr-4 md:flex duration-0' : 'bottom-3 md:bottom-8 md:pr-4 '} ${isSearchBar ? '' : ''}`} >
                         <Link className="text-700 hover:text-nav-hover " >bouquets</Link>
                         <Link className="text-700 hover:text-nav-hover " >flowers</Link>
                         <Link className="text-700 hover:text-nav-hover " >occassions</Link>
                         <Link className="text-700 hover:text-nav-hover " >colors</Link>
                         <Link className="text-700 hover:text-nav-hover " >popular</Link>
-                    </div>
-                        
                     </div>
             </div>
         
