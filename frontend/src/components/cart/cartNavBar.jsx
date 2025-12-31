@@ -7,16 +7,16 @@ import { IoIosBasket } from "react-icons/io";
 import { BiMenu } from "react-icons/bi";
 import { useState } from 'react';
 
-import SearchBar from './searchBar';
+import CartSearchBar from './cartSearchBar';
 
-const NavBar = () => {
+const CartNavBar = () => {
     const navigate = useNavigate();
     const [isSearch, setIsSearch] = useState(false);
 
     
     return (
         <>
-            <div className={`nav w-screen flex flex-col justify-around pt-2 pb-1 md:pt-3 bg-gray-200 relative ${isSearch ? 'transition h-32 md:h-30' : 'h-23 md:h-23'}`} >
+            <div className={`nav w-screen flex flex-col justify-around pt-2 pb-1 md:pt-3 bg-gray-200 relative ${isSearch ? 'h-27 md:h-23' : 'h-20 md:h-23'}`} >
                 <div className="flex items-center justify-between pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full absolute top-2 md:top-7 h-10">
                     {/* left */}
                     <div className='flex items-center space-x-4 '>
@@ -31,15 +31,9 @@ const NavBar = () => {
                     </div>
 
                     {/* center */}
-                    {(!isSearch) ? (<div className="hidden md:flex space-x-6 font-medium text-[15px]">
-                        <Link className="text-700 hover:text-nav-hover" >bouquets</Link>
-                        <Link className="text-700 hover:text-nav-hover" >flowers</Link>
-                        <Link className="text-700 hover:text-nav-hover" >occassions</Link>
-                        <Link className="text-700 hover:text-nav-hover" >colors</Link>
-                        <Link className="text-700 hover:text-nav-hover" >popular</Link>
-                    </div>) : (
+                    {(isSearch) && (
                         <div className="hidden md:flex justify-center w-300">
-                            <SearchBar isSearch={isSearch} setIsSearch={setIsSearch}/>
+                            <CartSearchBar isSearch={isSearch} setIsSearch={setIsSearch}/>
                         </div>
                     )}
                     
@@ -68,23 +62,14 @@ const NavBar = () => {
                         
                     </div>  
                 </div>
-                <div className={`${isSearch ? 'flex md:hidden justify-center mt-2 absolute top-10 md:top-2/4 w-full' : 'hidden'}`}>
-                    <SearchBar isSearch={isSearch} setIsSearch={setIsSearch}/>
+                <div className={`${isSearch ? 'flex md:hidden justify-center mt-2 absolute bottom-3 md:top-2/4 w-full' : 'hidden'}`}>
+                    <CartSearchBar isSearch={isSearch} setIsSearch={setIsSearch}/>
                 </div>
-                    
                 
-
-                <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute w-full text-sm font-medium md:text-[15px] ${isSearch ? 'flex top-25 md:bottom-4' : 'bottom-3 md:hidden'}`}>
-                        <Link className="text-700 hover:text-nav-hover " >bouquets</Link>
-                        <Link className="text-700 hover:text-nav-hover " >flowers</Link>
-                        <Link className="text-700 hover:text-nav-hover " >occassions</Link>
-                        <Link className="text-700 hover:text-nav-hover " >colors</Link>
-                        <Link className="text-700 hover:text-nav-hover " >popular</Link>
-                    </div>
             </div>
         
         </>
     )
 }
 
-export default NavBar
+export default CartNavBar

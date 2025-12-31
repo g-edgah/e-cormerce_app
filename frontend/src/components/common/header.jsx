@@ -1,13 +1,11 @@
 import TopBar from './topBar.jsx'
 import NavBar from './navBar.jsx';
-import CartDrawer from './cartDrawer.jsx';
 
 const Header = () => {
     return (
-        <div classNmae="header mx-auto flex items-center justify-center">
+        <div className="header mx-auto flex flex-col w-screen">
             <TopBar />
             <NavBar />
-            <CartDrawer />
         </div>
     )
 }

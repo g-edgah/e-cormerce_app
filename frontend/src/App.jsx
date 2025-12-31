@@ -1,5 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+import HomePage from './pages/home.jsx';
+import ProfilePage from './pages/profile.jsx';
+import CartPage from './pages/cart.jsx';
+
 import UserLayout from './components/layout/userLayout.jsx'
 import AdminLayout from './components/layout/adminLayout.jsx'
 
@@ -13,6 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={<UserLayout/>}/>
         <Route path='/admin' element={<AdminLayout/>}/>
+        <Route path='/cart' element={<CartPage/>}/>
+        <Route path='/profile' element={<ProfilePage/>}/>
       </Routes>
     </BrowserRouter>
   )
