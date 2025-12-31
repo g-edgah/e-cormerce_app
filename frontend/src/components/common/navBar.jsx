@@ -12,11 +12,25 @@ import SearchBar from './searchBar';
 const NavBar = () => {
     const navigate = useNavigate();
     const [isSearch, setIsSearch] = useState(false);
+    const [isSearchBar, setIsSearchBar] = useState(false);
+
+    const handleSearchToggle = () => {
+        setIsSearch(!isSearch);
+        if (isSearch) {
+            setTimeout(() => {
+                setIsSearchBar(false);
+            }, 300);
+        } else {
+            setTimeout(() => {
+                setIsSearchBar(true);
+            }, 300);
+        }
+    }   
 
     
     return (
         <>
-            <div className={`nav w-screen flex flex-col justify-around pt-2 pb-1 md:pt-3 bg-gray-200 relative ${isSearch ? 'transition h-32 md:h-30' : 'h-23 md:h-23'}`} >
+            <div className={`nav w-screen flex flex-col justify-around pt-2 pb-1 md:pt-3 bg-gray-200 relative transition-all duration-300 ease-in-out ${isSearch ? 'transition h-32 md:h-30' : 'h-23 md:h-23'}`} >
                 <div className="flex items-center justify-between pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full absolute top-2 md:top-7 h-10">
                     {/* left */}
                     <div className='flex items-center space-x-4 '>
@@ -31,15 +45,16 @@ const NavBar = () => {
                     </div>
 
                     {/* center */}
-                    {(!isSearch) ? (<div className="hidden md:flex space-x-6 font-medium text-[15px]">
+                    {/* {(!isSearch) ? (<div className={`hidden space-x-6 md:hidden font-medium text-[15px] ${isSearchBar ? '' : 'md:flex'}`}>
                         <Link className="text-700 hover:text-nav-hover" >bouquets</Link>
                         <Link className="text-700 hover:text-nav-hover" >flowers</Link>
                         <Link className="text-700 hover:text-nav-hover" >occassions</Link>
                         <Link className="text-700 hover:text-nav-hover" >colors</Link>
                         <Link className="text-700 hover:text-nav-hover" >popular</Link>
-                    </div>) : (
+                    </div>) : ( */}
+                    {(isSearch) && (
                         <div className="hidden md:flex justify-center w-300">
-                            <SearchBar isSearch={isSearch} setIsSearch={setIsSearch}/>
+                            <SearchBar isSearchBar={isSearchBar} handleSearchToggle={handleSearchToggle} isSearch={isSearch} setIsSearch={setIsSearch}/>
                         </div>
                     )}
                     
@@ -48,11 +63,11 @@ const NavBar = () => {
                     <div className="flex items-center space-x-4">
                         <div className={`hover:text-nav-hover ${isSearch ? 'hidden md:flex' : 'flex'}`}>
                             {isSearch ? (
-                                <button onClick={()=> setIsSearch(!isSearch)}>
+                                <button onClick={()=> handleSearchToggle()}>
                                     <HiMiniXMark className="h-6 w-6"/>
                                 </button>
                             ) : (
-                                <button onClick={()=> setIsSearch(!isSearch)}>
+                                <button onClick={()=> handleSearchToggle()}>
                                     <ImSearch className="h-5 w-5"/>
                                 </button>
                             )}
@@ -69,17 +84,20 @@ const NavBar = () => {
                     </div>  
                 </div>
                 <div className={`${isSearch ? 'flex md:hidden justify-center mt-2 absolute top-10 md:top-2/4 w-full' : 'hidden'}`}>
-                    <SearchBar isSearch={isSearch} setIsSearch={setIsSearch}/>
+                    <SearchBar isSearchBar={isSearchBar} handleSearchToggle={handleSearchToggle} isSearch={isSearch} setIsSearch={setIsSearch}/>
                 </div>
                     
                 
 
-                <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute w-full text-sm font-medium md:text-[15px] ${isSearch ? 'flex top-25 md:bottom-4' : 'bottom-3 md:hidden'}`}>
+                <div className={`w-full flex justify-around items-center `} >
+                    <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute text-sm font-medium md:text-[15px] transition-all duration-300 ease-in-out ${isSearch ? 'flex bottom-3 md:pr-4 md:flex duration-0' : 'bottom-3 md:bottom-8 md:pr-4 '} ${isSearchBar ? '' : ''}`}>
                         <Link className="text-700 hover:text-nav-hover " >bouquets</Link>
                         <Link className="text-700 hover:text-nav-hover " >flowers</Link>
                         <Link className="text-700 hover:text-nav-hover " >occassions</Link>
                         <Link className="text-700 hover:text-nav-hover " >colors</Link>
                         <Link className="text-700 hover:text-nav-hover " >popular</Link>
+                    </div>
+                        
                     </div>
             </div>
         

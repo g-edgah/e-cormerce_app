@@ -56,7 +56,7 @@ const CartPage = () => {
             ) : (
                 <div className='h-full w-full flex flex-col space-y-5 items-center'>
                     <div className="productContainer flex flex-col md:flex-row md:space-x-6 lg:space-x-12 mx-auto  md:px-10 lg:px-25 min-h-[45vh] overflow-y-auto w-[95vw]">
-                        <div className="cartProducts flex-grow p-4 overflow-y-auto">
+                        <div className="cartProducts grow p-4 overflow-y-auto">
                         
                             <div>
                                 {cartItems.map(
@@ -100,8 +100,8 @@ const CartPage = () => {
                     </div>
 
                     <div className="cartActions w-[95vw] mx-auto justify-center flex flex-row space-x-5 md:space-x-16">
-                        <button className="bg-white ring-1 hover:bg-gray-450 w-50 h-10 rounded-[12px] hover:shadow-md hover:shadow-gray-600 transition" onClick={()=> Navigate('/')}>continue shopping</button>
-                        <button className="bg-gray-400 ring-1 w-50 h-10 rounded-[12px] hover:shadow-md hover:shadow-gray-600 hover:bg-gray-500 transition">checkout</button>
+                        <button className="bg-white ring-1 hover:bg-gray-450 w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 transition" onClick={()=> Navigate('/')}>continue shopping</button>
+                        <button className="bg-gray-400 ring-1 w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 hover:bg-gray-500 transition">checkout</button>
                         
                     </div>
                 </div>
