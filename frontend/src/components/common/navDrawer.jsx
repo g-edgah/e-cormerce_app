@@ -7,7 +7,7 @@ const NavDrawer = ({handleNavDrawer}) =>{
 
     useEffect(() => {
     const handleClickOutside = (event) => {
-      // If click is NOT inside menu AND NOT on button, close menu
+      //if click is NOT inside menu AND NOT on button, close menu
       if (
         menuRef.current && 
         !menuRef.current.contains(event.target) &&
@@ -28,12 +28,15 @@ const NavDrawer = ({handleNavDrawer}) =>{
     }, []);
 
     return (
-        <div ref={menuRef} className="drawer z-20 absolute top-0 left-0 h-130 w-70 bg-gray-400">
+      // this first div covers the ntire screen but stays transparent so that when a user clicks outside the menu the menu closes without clicking what's underneath the useEffect then handles closing the menu
+      <div className="absolute top-0 z-19 left-0 w-screen h-screen bg-none ">
+        <div ref={menuRef} className="drawer z-20 absolute -top-2 left-0 h-130 w-70 bg-gray-400 rounded-br-lg">
             <button ref={buttonRef} onClick={() => handleNavDrawer()} className="closeDrawer absolute top-2 left-2">
                 < HiMiniXMark className="h-6 w-6"/>
             </button>
            
         </div>
+      </div>
     )
 }
 

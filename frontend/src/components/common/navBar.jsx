@@ -45,7 +45,7 @@ const NavBar = ({page}) => {
                         </button>
 
                         {navDrawerOpen && (
-                            <NavDrawer handleNavDrawer={handleNavDrawer} />
+                            <NavDrawer navDrawerOpen={navDrawerOpen} handleNavDrawer={handleNavDrawer} />
                         )}
 
                         <Link to='/' className={`text-2xl font-medium flex items-center space-x-0.5 ${page == 'home' ? 'text-active':''}`}>
