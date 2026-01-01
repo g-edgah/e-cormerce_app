@@ -34,11 +34,11 @@ const CartNavBar = () => {
                 <div className="flex items-center justify-between pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full absolute top-2 md:top-7 h-10">
                     {/* left */}
                     <div className='flex items-center space-x-4 '>
-                        <button className='md:hidden'>
-                                <BiMenu className="h-6 w-6 text-black-700"/>
+                        <button className='hidden'>
+                                <BiMenu className="h-6 w-6 text-navText"/>
                         </button>
 
-                        <Link to='/' className="text-2xl font-medium flex items-center space-x-0.5 hover:text-active">
+                        <Link to='/' className="text-2xl font-medium flex items-center space-x-0.5 hover:text-navHover">
                             <PiFlowerLotusLight />
                             <span className="mb-1"> uaridi</span>
                         </Link>
@@ -54,23 +54,23 @@ const CartNavBar = () => {
 
                     {/* right */}
                     <div className="flex items-center space-x-4">
-                        <div className={`hover:text-active ${isSearch ? 'hidden md:flex' : 'flex'}`}>
+                        <div className={`hover:text-navHover ${isSearch ? 'hidden md:flex' : 'flex'}`}>
                             {isSearch ? (
                                 <button onClick={()=> handleSearchToggle()}>
-                                    <HiMiniXMark className="text-active hover:text-black h-6 w-6"/>
+                                    <HiMiniXMark className="text-active hover:text-navText h-6 w-6"/>
                                 </button>
                             ) : (
                                 <button onClick={()=> handleSearchToggle()}>
-                                    <ImSearch className="hover:text-active h-5 w-5"/>
+                                    <ImSearch className="text-navText hover:text-navHover w-5 h-5"/>
                                 </button>
                             )}
                         </div>
-                        <Link to='/profile' className="hover:text-active">
-                            <HiUser className="h-6 w-6 text-black-700"/>
+                        <Link to='/profile' className="text-navText hover:text-navHover">
+                            <HiUser className="h-6 w-6 "/>
                         </Link>
-                        <button onClick={() => navigate('/cart')} className="relative hover:text-active ">
+                        <button onClick={() => navigate('/cart')} className="relative cursor-pointer text-active ">
                             <IoIosBasket className="h-6 w-6 text-nav-text"/>
-                            <span className="absolute -top-1 bg-nav-text text-white text-xs rounded-full px-2 py-0.5">0</span>
+                            <span className="absolute -top-1 bg-navHover text-white text-xs rounded-full px-2 py-0.5">0</span>
                             
                         </button >
                         

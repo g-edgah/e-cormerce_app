@@ -4,7 +4,7 @@ const CartCard = ({id, name, price, quantity, image, handleChangeQuantity, handl
     const productPrice = price * quantity;
 
     return (
-        <div className="container min-w-full h-35 md:min-w-47 md:max-w-47 justify-between md:h-78 bg-cartCard p-2 rounded-md flex md:flex-col">
+        <div className="container min-w-full h-35 md:min-w-47 md:max-w-47 justify-between md:h-78 bg-cartCard p-2 text-cartCardText rounded-md flex md:flex-col">
 
             <div className="image h-full aspect-[1/1.1] md:w-full  md:aspect-[1/1.1]">
                 <img className="rounded-md w-full h-full" src={`/src/assets/bouquets/${image}`} alt="product image" />
@@ -21,14 +21,14 @@ const CartCard = ({id, name, price, quantity, image, handleChangeQuantity, handl
                         <FaRegTrashCan className="h-5 w-5"/>
                     </button>
 
-                    <button onClick={() => {handleChangeQuantity(0)}} className="text-lg w-6 h-6 bg-gray-400 pb-0.5 rounded-md flex justify-around items-center cursor-pointer"> -
+                    <button onClick={() => {handleChangeQuantity(0)}} className="text-lg w-6 h-6 text-cartCardButtonsText bg-cartCardButtons pb-0.5 rounded-md flex justify-around items-center cursor-pointer"> -
                     </button>
                     
                     <div className="p-x-3 flex items-center">
                         <span className="text-center">{quantity}</span>
                     </div>
 
-                    <button onClick={() => {handleChangeQuantity(1)}} className="text-lg w-6 h-6 bg-gray-400 pb-0.5 rounded-md flex justify-around items-center cursor-pointer">+
+                    <button onClick={() => {handleChangeQuantity(1)}} className="text-lg w-6 h-6 bg-cartCardButtons text-cartCardButtonsText hover:bg-cartCardButtonsHover pb-0.5 rounded-md flex justify-around items-center cursor-pointer">+
                     </button>
                 </div>
 

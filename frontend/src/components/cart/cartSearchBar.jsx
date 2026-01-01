@@ -42,7 +42,7 @@ const CartSearchBar = ({ isSearch, setIsSearch, isSearchBar, handleSearchToggle}
                         </button>
                     </div>
                     <div className={`flex items-center ${isSearch ? 'md:hidden' : ''}`}>
-                        <button onClick={()=> handleSearchToggle()} className="ml-5 text-black hover:text-gray-700">
+                        <button onClick={()=> handleSearchToggle()} className="ml-5 text-active hover:text-navText">
                             <HiMiniXMark className="h-6 w-6"/>
                         </button>
                     </div>

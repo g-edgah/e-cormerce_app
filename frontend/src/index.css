@@ -5,15 +5,25 @@
 
 /* custom colors */
 @theme {
-  --color-topbar: black;
-  --color-nav-hover: #a5243d;
+  --color-topbar: oklch(45.5% 0.188 13.697);
+  --color-navHover: oklch(39.6% 0.141 25.723);
   --color-nav: oklch(92.8% 0.006 264.531);
-  --color-nav-text: oklch(39.6% 0.141 25.723);
-  --color-cartCard: oklch(96.9% 0.015 12.422);
+  --color-navText: oklch(20.8% 0.042 265.755);
+  --color-cartCard: oklch(97.1% 0.013 17.38);
+  --color-cartCardText: oklch(20.8% 0.042 265.755);
+  --color-cartCardButtons: oklch(70.7% 0.022 261.325);
+  --color-cartCardButtonsText: black;
   --color-cartSummary: oklch(92.8% 0.006 264.531);
+  --color-summaryText: black;
   --color-summaryButtons: oklch(45.5% 0.188 13.697);
-  --color-checkoutButtons: gray;
+  --color-summaryButtonsText: white;
+  --color-checkoutButtons: oklch(20.8% 0.042 265.755);
+  --color-checkoutButtonsHover: oklch(20.8% 0.042 265.755);
+  --color-checkoutButtonsText: white;
   --color-active: oklch(39.6% 0.141 25.723);
+  --color-footer: oklch(21.6% 0.006 56.043);
+  --color-footerTextTitle: oklch(27.8% 0.033 256.848);
+  --color-footerText: oklch(55.1% 0.027 264.364);
   --color-blue: #0d6efd;
   --color-black: #000000;   
   --color-gray: #6b7280;

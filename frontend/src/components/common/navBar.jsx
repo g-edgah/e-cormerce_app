@@ -29,8 +29,15 @@ const NavBar = ({page}) => {
         }
     }   
 
-    const handleNavDrawer = () => {
-        setIsNavDrawerOpen(!navDrawerOpen)
+    const handleNavDrawer = (value) => {
+        if (value === 0) {
+            setIsNavDrawerOpen(false);
+            console.log(value, navDrawerOpen)
+            return
+        } else if (value === 1) {
+            setIsNavDrawerOpen(!navDrawerOpen)
+            console.log(value, navDrawerOpen)
+        }
     }
 
     
@@ -40,15 +47,17 @@ const NavBar = ({page}) => {
                 <div className="flex items-center justify-between pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full absolute top-2 md:top-7 h-10">
                     {/* left */}
                     <div className='flex items-center space-x-4 '>
-                        <button onClick={()=> handleNavDrawer()} className='md:hidden'>
-                                <BiMenu className="h-6 w-6 text-black-700"/>
+                        <button onClick={()=> handleNavDrawer(1)} className='hidden'>
+                             <BiMenu className="h-6 w-6 text-navText"/>
+                            
+                                
                         </button>
 
-                        {navDrawerOpen && (
+                       
                             <NavDrawer navDrawerOpen={navDrawerOpen} handleNavDrawer={handleNavDrawer} />
-                        )}
+                        
 
-                        <Link to='/' className={`text-2xl font-medium flex items-center space-x-0.5 ${page == 'home' ? 'text-active':''}`}>
+                        <Link to='/' className={`bg-none text-2xl font-medium flex items-center space-x-0.5 ${page == 'home' ? 'text-navHover':'text-navText'}`}>
                             <PiFlowerLotusLight className=''/>
                             <span className=" mb-1"> uaridi</span>
                         </Link>
@@ -56,11 +65,11 @@ const NavBar = ({page}) => {
 
                     {/* center */}
                     {/* {(!isSearch) ? (<div className={`hidden space-x-6 font-medium text-[15px] ${isSearchBar ? '' : 'md:flex'}`}>
-                        <Link className="text-700 hover:text-nav-hover" >bouquets</Link>
-                        <Link className="text-700 hover:text-nav-hover" >flowers</Link>
-                        <Link className="text-700 hover:text-nav-hover" >occassions</Link>
-                        <Link className="text-700 hover:text-nav-hover" >colors</Link>
-                        <Link className="text-700 hover:text-nav-hover" >popular</Link>
+                        <Link className="text-700 hover:text-navHover" >bouquets</Link>
+                        <Link className="text-700 hover:text-navHover" >flowers</Link>
+                        <Link className="text-700 hover:text-navHover" >occassions</Link>
+                        <Link className="text-700 hover:text-navHover" >colors</Link>
+                        <Link className="text-700 hover:text-navHover" >popular</Link>
                     </div>) : ( */}
                     {(isSearch) && (
                         <div className="hidden md:flex justify-center w-300">
@@ -71,7 +80,7 @@ const NavBar = ({page}) => {
 
                     {/* right */}
                     <div className="flex items-center space-x-4">
-                        <div className={` ${isSearch ? 'hidden md:flex text-active hover:text-black' : 'flex text-black hover:text-active'}`}>
+                        <div className={` ${isSearch ? 'hidden md:flex text-active hover:text-navText' : 'flex text-navText hover:text-active'}`}>
                             {isSearch ? (
                                 <button onClick={()=> handleSearchToggle()}>
                                     <HiMiniXMark className="h-6 w-6"/>
@@ -82,11 +91,11 @@ const NavBar = ({page}) => {
                                 </button>
                             )}
                         </div>
-                        <Link to='/profile' className="hover:text-nav-hover">
-                            <HiUser className="h-6 w-6 text-black-700"/>
+                        <Link to='/profile' className="text-navText hover:text-navHover">
+                            <HiUser className="h-6 w-6"/>
                         </Link>
-                        <button onClick={() => navigate('/cart')} className="relative hover:text-active">
-                            <IoIosBasket className="h-6 w-6 text-black-700"/>
+                        <button onClick={() => navigate('/cart')} className="relative cursor-pointer text-navText hover:text-navHover">
+                            <IoIosBasket className="h-6 w-6"/>
                             <span className="absolute -top-1 bg-topbar text-white text-xs rounded-full px-2 py-0.5">0</span>
                             
                         </button >
@@ -100,11 +109,11 @@ const NavBar = ({page}) => {
                 
 
                 <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute w-full md:w-110 text-sm font-medium md:text-[16px] transition-all duration-300 ease-in-out ${isSearch ? 'flex bottom-3 md:pr-4 md:flex duration-0' : 'bottom-3 md:bottom-8 md:pr-4 '}`} >
-                        <Link className="text-700 hover:text-active " >bouquets</Link>
-                        <Link className="text-700 hover:text-active" >flowers</Link>
-                        <Link className="text-700 hover:text-active" >occassions</Link>
-                        <Link className="text-700 hover:text-active" >colors</Link>
-                        <Link className="text-700 hover:text-active" >popular</Link>
+                        <Link className="text-700 hover:text-navHover" >bouquets</Link>
+                        <Link className="text-700 hover:text-navHover" >flowers</Link>
+                        <Link className="text-700 hover:text-navHover" >occassions</Link>
+                        <Link className="text-700 hover:text-navHover" >colors</Link>
+                        <Link className="text-700 hover:text-navHover" >popular</Link>
                     </div>
             </div>
         
