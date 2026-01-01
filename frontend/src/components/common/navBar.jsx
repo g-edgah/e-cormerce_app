@@ -8,11 +8,13 @@ import { BiMenu } from "react-icons/bi";
 import { useState } from 'react';
 
 import SearchBar from './searchBar';
+import NavDrawer from './navDrawer';    
 
 const NavBar = ({page}) => {
     const navigate = useNavigate();
     const [isSearch, setIsSearch] = useState(false);
     const [isSearchBar, setIsSearchBar] = useState(false);
+    const [navDrawerOpen, setIsNavDrawerOpen] = useState(false);
 
     const handleSearchToggle = () => {
         setIsSearch(!isSearch);
@@ -27,6 +29,10 @@ const NavBar = ({page}) => {
         }
     }   
 
+    const handleNavDrawer = () => {
+        setIsNavDrawerOpen(!navDrawerOpen)
+    }
+
     
     return (
         <>
@@ -34,9 +40,13 @@ const NavBar = ({page}) => {
                 <div className="flex items-center justify-between pl-2 pr-5.5 xs:pr-7 xs:pl-4 md:px-10 lg:px-25 w-full md:w-full absolute top-2 md:top-7 h-10">
                     {/* left */}
                     <div className='flex items-center space-x-4 '>
-                        <button className='md:hidden'>
+                        <button onClick={()=> handleNavDrawer()} className='md:hidden'>
                                 <BiMenu className="h-6 w-6 text-black-700"/>
                         </button>
+
+                        {navDrawerOpen && (
+                            <NavDrawer handleNavDrawer={handleNavDrawer} />
+                        )}
 
                         <Link to='/' className={`text-2xl font-medium flex items-center space-x-0.5 ${page == 'home' ? 'text-active':''}`}>
                             <PiFlowerLotusLight className=''/>
