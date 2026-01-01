@@ -13,6 +13,72 @@ const CartPage = () => {
     const [shippingLocation, setShippingLocation] = useState('');
     const [shippingCost, setShippingCost] = useState(0);
 
+    //mock cart items for use in frontend design
+    const sampleCartItems = [
+        {
+            id: 1,
+            name: 'pink roses bouquet',
+            price: 2900,
+            quantity: 2,
+            tags: {type: 'roses', color: 'pink', bundling: 'bouquet'},
+            image: 'pink_roses_bouquet.png',
+        },
+        {
+            id: 2,
+            name: 'pink roses bouquet',
+            price: 2900,
+            quantity: 2,
+            tags: {type: 'roses', color: 'pink', bundling: 'bouquet'},
+            image: 'pink_roses_bouquet.png',
+        },
+        {
+            id: 3,
+            name: 'pink roses bouquet',
+            price: 2900,
+            quantity: 2,
+            tags: {type: 'roses', color: 'pink', bundling: 'bouquet'},
+            image: 'pink_roses_bouquet.png',
+        },
+        {
+            id: 4,
+            name: 'pink roses bouquet',
+            price: 2900,
+            quantity: 2,
+            tags: {type: 'roses', color: 'pink', bundling: 'bouquet'},
+            image: 'pink_roses_bouquet.png',
+        },
+        {
+            id: 5,
+            name: 'pink roses bouquet',
+            price: 2900,
+            quantity: 2,
+            tags: {type: 'roses', color: 'pink', bundling: 'bouquet'},
+            image: 'pink_roses_bouquet.png',
+        },
+        {
+            id: 6,
+            name: 'pink roses bouquet',
+            price: 2900,
+            quantity: 2,
+            tags: {type: 'roses', color: 'pink', bundling: 'bouquet'},
+            image: 'pink_roses_bouquet.png',
+        }
+    ]
+
+    const handleDelete = (productId) => {
+        //logic to handle deleting items from cart
+        console.log("deleted")
+    }
+
+    const handleChangeQuantity = (change, productId) => {
+        // Logic to change quantity of cart item
+        if (change === 0) {
+            console.log("minus")
+        } else if (change=1) {
+            console.log("plus")
+        }
+    }
+
     const getCartTotal = () => {
         // Logic to calculate cart total
     }
@@ -44,7 +110,7 @@ const CartPage = () => {
     return (
         <div className="h-full w-full flex flex-col space-y-5 items-center">
             <CartHeader />
-            {cartItems.length !== 0 ? (
+            {sampleCartItems.length === 0 ? (
                 <div className="emptyCart w-full h-[50vh] flex flex-col items-center space-y-10 justify-center mt-20">
                     <div className="text-center space-y-4">
                         <h2 className="text-2xl font-medium">your cart is empty</h2>
@@ -55,26 +121,32 @@ const CartPage = () => {
                 </div>
             ) : (
                 <div className='h-full w-full flex flex-col space-y-5 items-center'>
-                    <div className="productContainer flex flex-col md:flex-row md:space-x-6 lg:space-x-12 mx-auto  md:px-10 lg:px-25 min-h-[45vh] overflow-y-auto w-[95vw]">
-                        <div className="cartProducts grow p-4 overflow-y-auto">
+                    <div className="productContainer flex flex-row flex-wrap gap-2 justify-start md:gap-4 lg:space-x-12 mx-auto max-h-[45vh] min-h-[45vh] overflow-y-auto w-[95vw]">
                         
-                            <div>
-                                {cartItems.map(
+                            
+                                {sampleCartItems.map(
                                     ({
-                                        _id,
+                                        id,
                                         name,
                                         price,
                                         quantity,
                                         image,
                                     }) => (
-                                    <CartCard key={item.id} item={item} />
+                                    <CartCard 
+                                        key={id}
+                                        itemId={id}
+                                        name={name}
+                                        price={price}
+                                        quantity={quantity}
+                                        image={image}
+                                        handleChangeQuantity={handleChangeQuantity}
+                                        handleDelete={handleDelete}
+                                    />
                                 ))}
-                            </div>
-                            
-                        </div>
+                       
                     </div>
 
-                    <div className="summaryContainer flex flex-col w-full max-w-[95vw] mx-auto p-4 md:p-6 space-y-2 md:space-y-6 bg-gray-200 rounded-lg">
+                    <div className="summaryContainer flex flex-col w-full max-w-[95vw] mx-auto py-2 px-4 md:p-6 space-y-2 md:space-y-6 bg-gray-200 rounded-lg">
                         <div className="cartTotal">
                             <span>cart total: {cartTotal}</span>
                         </div>
@@ -100,8 +172,8 @@ const CartPage = () => {
                     </div>
 
                     <div className="cartActions w-[95vw] mx-auto justify-center flex flex-row space-x-5 md:space-x-16">
-                        <button className="bg-white ring-1 hover:bg-gray-450 w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 transition" onClick={()=> Navigate('/')}>continue shopping</button>
-                        <button className="bg-gray-400 ring-1 w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 hover:bg-gray-500 transition">checkout</button>
+                        <button className="bg-white ring-1 hover:bg-gray-450 w-40 md:w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 transition" onClick={()=> Navigate('/')}>continue shopping</button>
+                        <button className="bg-gray-400 ring-1 w-40 md:w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 hover:bg-gray-500 transition">checkout</button>
                         
                     </div>
                 </div>

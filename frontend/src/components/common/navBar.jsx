@@ -89,7 +89,7 @@ const NavBar = () => {
                     
                 
 
-                <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute w-full md:w-110 text-sm font-medium md:text-[16px] transition-all duration-300 ease-in-out ${isSearch ? 'flex bottom-3 md:pr-4 md:flex duration-0' : 'bottom-3 md:bottom-8 md:pr-4 '} ${isSearchBar ? '' : ''}`} >
+                <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute w-full md:w-110 text-sm font-medium md:text-[16px] transition-all duration-300 ease-in-out ${isSearch ? 'flex bottom-3 md:pr-4 md:flex duration-0' : 'bottom-3 md:bottom-8 md:pr-4 '}`} >
                         <Link className="text-700 hover:text-nav-hover " >bouquets</Link>
                         <Link className="text-700 hover:text-nav-hover " >flowers</Link>
                         <Link className="text-700 hover:text-nav-hover " >occassions</Link>
