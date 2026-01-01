@@ -4,7 +4,7 @@ import Footer from '../common/footer.jsx';
 const UserLayout = () => {
     return (
         <>
-            <Header page="user" placeHolder="search products" />
+            <Header page="home" />
             <Footer />
         </>
     )

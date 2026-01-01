@@ -1,11 +1,11 @@
 import TopBar from './topBar.jsx'
 import NavBar from './navBar.jsx';
 
-const Header = () => {
+const Header = ({page}) => {
     return (
         <div className="header mx-auto flex flex-col w-screen">
             <TopBar />
-            <NavBar />
+            <NavBar page={page} />
         </div>
     )
 }

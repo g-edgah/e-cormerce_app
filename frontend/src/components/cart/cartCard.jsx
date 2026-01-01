@@ -4,7 +4,7 @@ const CartCard = ({id, name, price, quantity, image, handleChangeQuantity, handl
     const productPrice = price * quantity;
 
     return (
-        <div className="container min-w-full h-35 md:min-w-45 md:max-w-45 justify-between md:h-70 bg-gray-200 p-2 rounded-md flex md:flex-col">
+        <div className="container min-w-full h-35 md:min-w-45 md:max-w-45 justify-between md:h-70 bg-cartCard p-2 rounded-md flex md:flex-col">
 
             <div className="image w-30 h-full md:w-full  md:h-40">
                 <img className="rounded-md w-full h-full" src={`/src/assets/bouquets/${image}`} alt="product image" />

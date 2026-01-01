@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 import SearchBar from './searchBar';
 
-const NavBar = () => {
+const NavBar = ({page}) => {
     const navigate = useNavigate();
     const [isSearch, setIsSearch] = useState(false);
     const [isSearchBar, setIsSearchBar] = useState(false);
@@ -38,9 +38,9 @@ const NavBar = () => {
                                 <BiMenu className="h-6 w-6 text-black-700"/>
                         </button>
 
-                        <Link to='/' className="text-2xl font-medium flex items-center space-x-0.5 hover:text-nav-hover">
-                            <PiFlowerLotusLight />
-                            <span className="mb-1"> uaridi</span>
+                        <Link to='/' className={`text-2xl font-medium flex items-center space-x-0.5 ${page == 'home' ? 'text-active':''}`}>
+                            <PiFlowerLotusLight className=''/>
+                            <span className=" mb-1"> uaridi</span>
                         </Link>
                     </div>
 
@@ -61,7 +61,7 @@ const NavBar = () => {
 
                     {/* right */}
                     <div className="flex items-center space-x-4">
-                        <div className={`hover:text-nav-hover ${isSearch ? 'hidden md:flex' : 'flex'}`}>
+                        <div className={` ${isSearch ? 'hidden md:flex text-active hover:text-black' : 'flex text-black hover:text-active'}`}>
                             {isSearch ? (
                                 <button onClick={()=> handleSearchToggle()}>
                                     <HiMiniXMark className="h-6 w-6"/>
@@ -75,7 +75,7 @@ const NavBar = () => {
                         <Link to='/profile' className="hover:text-nav-hover">
                             <HiUser className="h-6 w-6 text-black-700"/>
                         </Link>
-                        <button onClick={() => navigate('/cart')} className="relative hover:text-nav-hover ">
+                        <button onClick={() => navigate('/cart')} className="relative hover:text-active">
                             <IoIosBasket className="h-6 w-6 text-black-700"/>
                             <span className="absolute -top-1 bg-topbar text-white text-xs rounded-full px-2 py-0.5">0</span>
                             
@@ -90,11 +90,11 @@ const NavBar = () => {
                 
 
                 <div className={`flex justify-around px-1  xs:space-x-6 xs:items-center xs:justify-center absolute w-full md:w-110 text-sm font-medium md:text-[16px] transition-all duration-300 ease-in-out ${isSearch ? 'flex bottom-3 md:pr-4 md:flex duration-0' : 'bottom-3 md:bottom-8 md:pr-4 '}`} >
-                        <Link className="text-700 hover:text-nav-hover " >bouquets</Link>
-                        <Link className="text-700 hover:text-nav-hover " >flowers</Link>
-                        <Link className="text-700 hover:text-nav-hover " >occassions</Link>
-                        <Link className="text-700 hover:text-nav-hover " >colors</Link>
-                        <Link className="text-700 hover:text-nav-hover " >popular</Link>
+                        <Link className="text-700 hover:text-active " >bouquets</Link>
+                        <Link className="text-700 hover:text-active" >flowers</Link>
+                        <Link className="text-700 hover:text-active" >occassions</Link>
+                        <Link className="text-700 hover:text-active" >colors</Link>
+                        <Link className="text-700 hover:text-active" >popular</Link>
                     </div>
             </div>
         
