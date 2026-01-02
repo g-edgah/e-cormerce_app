@@ -172,8 +172,8 @@ const CartPage = () => {
                     </div>
 
                     <div className="cartActions mx-auto justify-center flex flex-row space-x-5 md:space-x-16 text-checkoutButtonsText pr-1">
-                        <button className="bg-checkoutButtons hover:bg-checkoutButtonsHover ring-1 hover:bg-gray-450 w-40 md:w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 transition" onClick={()=> Navigate('/')}>continue shopping</button>
-                        <button className="bg-checkoutButtons ring-1 w-40 md:w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 hover:bg-checkoutButtonsHover transition">checkout</button>
+                        <button className="bg-checkoutButtons hover:bg-checkoutButtonsHover hover:bg-gray-450 w-40 md:w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 transition" onClick={()=> Navigate('/')}>continue shopping</button>
+                        <button className="bg-checkoutButtons w-40 md:w-50 h-10 rounded-xl hover:shadow-md hover:shadow-gray-600 hover:bg-checkoutButtonsHover transition">checkout</button>
                         
                     </div>
                 </div>

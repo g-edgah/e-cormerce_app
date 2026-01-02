@@ -12,7 +12,7 @@ const Footer = () => {
     }
 
     return (
-        <div className="footer fixed bottom-0 bg-footer w-screen  text-footerText pt-10 mx-auto flex flex-col gap-10 items-center p-4">
+        <div className="footer bg-footer w-screen  text-footerText pt-10 mx-auto flex flex-col gap-10 items-center p-4">
 
             <div className="newsletter mb-3 space-y-3 flex flex-col max-w-150" >
 
