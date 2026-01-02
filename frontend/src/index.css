@@ -5,7 +5,7 @@
 
 /* custom colors */
 @theme {
-  --color-topbar: oklch(45.5% 0.188 13.697);
+  --color-topbar: oklch(20.8% 0.042 265.755);
   --color-navHover: oklch(39.6% 0.141 25.723);
   --color-nav: oklch(92.8% 0.006 264.531);
   --color-navText: oklch(20.8% 0.042 265.755);
@@ -17,17 +17,19 @@
   --color-summaryText: black;
   --color-summaryButtons: oklch(45.5% 0.188 13.697);
   --color-summaryButtonsText: white;
-  --color-checkoutButtons: oklch(20.8% 0.042 265.755);
+  --color-checkoutButtons: oklch(27.9% 0.041 260.031);
   --color-checkoutButtonsHover: oklch(20.8% 0.042 265.755);
   --color-checkoutButtonsText: white;
+  --color-inputText: ;
   --color-active: oklch(39.6% 0.141 25.723);
-  --color-footer: oklch(21.6% 0.006 56.043);
-  --color-footerTextTitle: oklch(27.8% 0.033 256.848);
-  --color-footerText: oklch(55.1% 0.027 264.364);
+  --color-footer: oklch(45.5% 0.188 13.697);
+  --color--footerButton: oklch(45.5% 0.188 13.697);
+  --color-footerTextTitle: #F0F6FC;
+  --color-footerText: #F0F6FC;
   --color-blue: #0d6efd;
   --color-black: #000000;   
   --color-gray: #6b7280;
-  --color-1:v#a5243d;
+  --color-one: oklch(89.2% 0.058 10.001);
   --color-2: #b48291;
 }
 
