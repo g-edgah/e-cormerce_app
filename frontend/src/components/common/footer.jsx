@@ -24,10 +24,10 @@ const Footer = () => {
                     <span className='text-footerText font-md text-sm'>sign up and get 20% off on your first bouquet</span>
 
                     <form onSubmit={()=>handleEmailSubmit()} className="flex">
-                        <input className='w-full border border-gray-400 bg-gray-200 p-3 text-sm focus:outline-none rounded-md transition-all text-topbar' 
+                        <input className='w-full border border-gray-400 bg-gray-300 p-3 text-sm md:text-md focus:outline-none rounded-md transition-all text-topbar' 
                         type="text"
                         placeholder='enter your email' />
-                        <button type='submit' className='text-white bg-topbar rounded-lg ml-4 w-35 text-sm hover:bg-red-900 transition-all'>subscribe</button>
+                        <button type='submit' className='text-footerText bg-footerButton rounded-lg ml-4 w-35 text-sm hover:bg-slate-900 transition-all'>subscribe</button>
                     </form>
                 </div>
 
@@ -36,19 +36,19 @@ const Footer = () => {
                 
                 <div className="shop space-y-2 flex flex-col ">
                     <span className="text-md font-bold text-footerTextTitle mb-2" >shop</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>popular</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>bouquets</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>flowers</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>occassions</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>colors</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>popular</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>bouquets</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>flowers</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>occassions</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>colors</span>
                 </div>
 
                 <div className="support space-y-2 flex flex-col">
                     <span className="text-md font-bold text-footerTextTitle">support</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>contact us</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>about us</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>FAQs</span>
-                    <span className='cursor-pointer hover:text-footerTextTitle text-sm'>features</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>contact us</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>about us</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>FAQs</span>
+                    <span className='cursor-pointer hover:text-one text-sm'>features</span>
 
                 </div>
 
@@ -57,26 +57,26 @@ const Footer = () => {
 
                     <div className="socials flex space-x-4">
                         <a href="#" className='hover:text-gray-300'>
-                            <TbBrandMeta className='h-5 w-5 hover:text-footerTextTitle'/>
+                            <TbBrandMeta className='h-5 w-5 hover:text-one'/>
                         </a>
                         <a href="#" className='hover:text-gray-300'>
-                            <IoLogoInstagram className='h-5 w-5 hover:text-footerTextTitle'/>
+                            <IoLogoInstagram className='h-5 w-5 hover:text-one'/>
                         </a>
                         <a href="#" className='hover:text-gray-300'>
-                            <RiTwitterXLine className='h-5 w-5 hover:text-footerTextTitle'/>
+                            <RiTwitterXLine className='h-5 w-5 hover:text-one'/>
                         </a>
                     </div>
                     <div className="phone text-sm">
-                        <span className=''>call us</span>
-                        <span className='flex items-center hover:text-footerTextTitle cursor-pointer'> <MdOutlineLocalPhone /> +0 (000) 123-456</span>
+                        <span className='flex items-center mb-1.5'>call us <MdOutlineLocalPhone className='ml-1' /></span>
+                        <span className='flex items-center hover:text-one cursor-pointer'>  +0 (000) 123-456</span>
                     </div>
                 </div>
 
             </div>
             <div className='w-full text-sm flex grow text-one'>
                 <div className='flex flex-row items-center w-full justify-center space-x-1'>
-                    <span className='text-xs'>@2026</span> 
-                    <span className='flex flex-row items-center'><PiFlowerLotusLight className='h-4 w-4 pt-0.5'/> uaridi. all rights reserved.</span></div>
+                    
+                    <span className='flex flex-row items-center'><PiFlowerLotusLight className='h-4 w-4 pt-0.5'/> uaridi <span className='ml-1 text-xs'>@2026</span>. all rights reserved.</span></div>
             </div>
             
         </div>
