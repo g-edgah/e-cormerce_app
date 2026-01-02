@@ -9,7 +9,7 @@ const FlowerCard = ({name, price, image}) => {
                     <span className="text-sm md:text-md font-semibold name">{name}</span>
                     <span className="price text-sm md:text-md font-semibold ">ksh {price}</span>
                 </div>
-                <button className="absolute top-38 left-26 md:static  bg-gray-300 hover:text-white hover:bg-summaryButtons md:w-10 md:h-10 rounded-lg flex items-center justify-around">
+                <button className="absolute top-47 left-33 md:static  bg-gray-300 hover:text-white hover:bg-summaryButtons md:w-10 md:h-10 rounded-lg flex items-center justify-around">
                     <IoIosBasket className="w-7 h-7 md:w-8 md:h-8" />
                 </button>
             </div>
