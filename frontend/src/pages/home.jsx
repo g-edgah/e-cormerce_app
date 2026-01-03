@@ -53,48 +53,53 @@ const HomePage = () => {
 
             <div className="relative flex flex-col spacing-y-4 items-center justify-around w-full px-5 md;px-15">
                 <span>flowers for every occassion</span>
-                
-                <button onClick={() => scroll('left')} className='
-                z-10 
-                absolute 
-                left-3
-                top-1/2
-                bg-gray-300 backdrop-blur-sm
-                w-10 h-10
-                rounded-full
-                shadow-lg
-                flex items-center justify-center
-                transition-all duration-200
-                hover:bg-white hover:shadow-xl
-                hover:scale-110
-                active:scale-95
-                border border-gray-200'>
-                    <FaAngleLeft className='h-7'/>
-                </button>
-                
-                <div onScroll={checkScroll} ref={sliderRef} className="occassions bg-gray-400 flex px-0 space-x-0 w-[85vw] max-w-234 rounded-lg justify-around items-center overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory">
-                    <OccassionCard className="snap-center" name="yellow yellow" price="4200" image='bg-[url(/src/assets/graduation/grad-6.jpeg)]'/>
-                    <OccassionCard className="snap-center" name="yellow yellow" price="4200" image='bg-[url(/src/assets/wedding/wed-8.jpeg)]'/>
-                    <OccassionCard className="snap-center" name="yellow yellow" price="4200" image='bg-[url(/src/assets/birthday/birth-5.jpeg)]'/>
-                    <OccassionCard className="snap-center" name="yellow yellow" price="4200" image='bg-[url(/src/assets/romantic/rom-1.jpeg)]'/>
-                </div>
+                <div className="flex flex-row min-w-full justify-around items-center px-3">
+                    <button onClick={() => scroll('left')} className='
+                    z-10 
+                    absolute
+                    left-3
+                    md:relative
+                    md:left-0
+                    bg-gray-300 backdrop-blur-sm
+                    w-10 h-10
+                    rounded-full
+                    shadow-lg
+                    flex items-center justify-center
+                    transition-all duration-200
+                    hover:bg-white hover:shadow-xl
+                    hover:scale-110
+                    active:scale-95
+                    border border-gray-200'>
+                        <FaAngleLeft className='h-7'/>
+                    </button>
+                    
+                    <div onScroll={checkScroll} ref={sliderRef} className="occassions bg-gray-400 flex px-0 space-x-0 w-[85vw] max-w-234 rounded-lg justify-around items-center overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory">
+                        <OccassionCard className=" snap-center" text="those unforgateable milestones" title="graduation" image='bg-[url(/src/assets/graduation/grad-7.jpeg)]'/>
+                        <OccassionCard className="snap-center" title="wedding" text="that special day" image='bg-[url(/src/assets/wedding/wed-3.jpeg)]'/>
+                        <OccassionCard className="snap-center" title="birthdays" text="the day that's all about you" image='bg-[url(/src/assets/birthday/birth-17.jpeg)]'/>
+                        <OccassionCard className="snap-center" title="gifts" text="when you want to make her/him feel special" image='bg-[url(/src/assets/romantic/rom-4.png)]'/>
+                    </div>
 
-                <button onClick={() => scroll('right')} className="z-10 
-                absolute 
-                right-3
-                top-1/2
-                rounded-full
-                bg-gray-300 backdrop-blur-sm
-                w-10 h-10
-                shadow-lg
-                flex items-center justify-center
-                transition-all duration-200
-                hover:bg-white hover:shadow-xl
-                hover:scale-110
-                active:scale-95
-                border border-gray-200">
-                    <FaAngleRight className=' h-7'/>
-                </button>
+                    <button onClick={() => scroll('right')} className="
+                    z-10 
+                    absolute
+                    right-3
+                    md:relative
+                    md:right-0
+                    rounded-full
+                    bg-gray-300 backdrop-blur-sm
+                    w-10 h-10
+                    shadow-lg
+                    flex items-center justify-center
+                    transition-all duration-200
+                    hover:bg-white hover:shadow-xl
+                    hover:scale-110
+                    active:scale-95
+                    border border-gray-200">
+                        <FaAngleRight className=' h-7'/>
+                    </button>
+                </div>
+                
                 
             </div>
             <div className="flex flex-col spacing-y-4 items-center">
