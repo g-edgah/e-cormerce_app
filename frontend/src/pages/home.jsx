@@ -1,7 +1,34 @@
-import FlowerCard from '../components/common/flowerCard.jsx'
-import { FaAngleLeft } from "react-icons/fa6";
+import FlowerCard from '../components/home/flowerCard.jsx'
+import OccassionCard from '../components/home/occassionCard.jsx'
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import { useRef, useState } from 'react';
 
 const HomePage = () => {
+    const sliderRef = useRef(null);
+    const [showLeftArrow, setShowLeftArrow] = useState(false);
+    const [showRightArrow, setShowRightArrow] = useState(true);
+
+    const checkScroll = () => {
+        if (!sliderRef.current) return;
+        
+        const { scrollLeft, scrollWidth, clientWidth } = sliderRef.current;
+        setShowLeftArrow(scrollLeft > 0);
+        setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+    };
+
+    const scroll = (direction) => {
+        if (!sliderRef.current) return;
+        
+        const scrollAmount = sliderRef.current.clientWidth;
+        sliderRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+        });
+        
+        // Check arrows after scroll
+        setTimeout(checkScroll, 300);
+    };
+
     return (
         <div className="flex flex-col space-y-10">
 
@@ -24,18 +51,51 @@ const HomePage = () => {
                 
             </div>
 
-            <div className="relative flex flex-col spacing-y-4 items-center w-full px-5 md;px-15">
+            <div className="relative flex flex-col spacing-y-4 items-center justify-around w-full px-5 md;px-15">
                 <span>flowers for every occassion</span>
-                full width except aesthetic spacing
-                <div className=" occassions flex space-x-5 w-full justify-around overflow-x-auto">
-                    <FaAngleLeft />
-                    <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
-                    <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
-                    <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
-                    <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
-                    <FaAngleLeft />
-                    
+                
+                <button onClick={() => scroll('left')} className='
+                z-10 
+                absolute 
+                left-3
+                top-1/2
+                bg-gray-300 backdrop-blur-sm
+                w-10 h-10
+                rounded-full
+                shadow-lg
+                flex items-center justify-center
+                transition-all duration-200
+                hover:bg-white hover:shadow-xl
+                hover:scale-110
+                active:scale-95
+                border border-gray-200'>
+                    <FaAngleLeft className='h-7'/>
+                </button>
+                
+                <div onScroll={checkScroll} ref={sliderRef} className="occassions bg-gray-400 flex px-0 space-x-0 w-[85vw] max-w-234 rounded-lg justify-around items-center overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory">
+                    <OccassionCard className="snap-center" name="yellow yellow" price="4200" image='bg-[url(/src/assets/graduation/grad-6.jpeg)]'/>
+                    <OccassionCard className="snap-center" name="yellow yellow" price="4200" image='bg-[url(/src/assets/wedding/wed-8.jpeg)]'/>
+                    <OccassionCard className="snap-center" name="yellow yellow" price="4200" image='bg-[url(/src/assets/birthday/birth-5.jpeg)]'/>
+                    <OccassionCard className="snap-center" name="yellow yellow" price="4200" image='bg-[url(/src/assets/romantic/rom-1.jpeg)]'/>
                 </div>
+
+                <button onClick={() => scroll('right')} className="z-10 
+                absolute 
+                right-3
+                top-1/2
+                rounded-full
+                bg-gray-300 backdrop-blur-sm
+                w-10 h-10
+                shadow-lg
+                flex items-center justify-center
+                transition-all duration-200
+                hover:bg-white hover:shadow-xl
+                hover:scale-110
+                active:scale-95
+                border border-gray-200">
+                    <FaAngleRight className=' h-7'/>
+                </button>
+                
             </div>
             <div className="flex flex-col spacing-y-4 items-center">
                 <span>featured discounts</span>
@@ -51,7 +111,7 @@ const HomePage = () => {
             
             <div className="popular flex flex-col space-y-5 items-center">
                 <span>flying off the shelves</span>
-                <div className="flower-row flex gap-5 w-full  flex-wrap justify-center items-center">
+                <div className="flower-row flex gap-5 w-full  flex-wrap justify-center items-center max-w-300">
                 
                     <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
                     <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>

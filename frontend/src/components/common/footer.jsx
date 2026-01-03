@@ -21,7 +21,7 @@ const Footer = () => {
                     <span className="text-footerText font-md text-sm">
                         be the first to know about everything uaridi from new products to exclusive events and discounts
                     </span>
-                    <span className='text-footerText font-md text-sm'>sign up and get 20% off on your first bouquet</span>
+                    <span className='text-footerText font-md text-sm'>sign up and get 20% off on your next bouquet</span>
 
                     <form onSubmit={()=>handleEmailSubmit()} className="flex">
                         <input className='w-full border border-gray-400 bg-gray-300 p-3 text-sm md:text-md focus:outline-none rounded-md transition-all text-topbar' 
