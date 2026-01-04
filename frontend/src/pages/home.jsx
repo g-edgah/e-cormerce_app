@@ -39,7 +39,7 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className="flex flex-col space-y-15">
+        <div className="flex flex-col space-y-10 md:space-y-15">
 
             <div className="bg-[url(/src/assets/bouquets/image_copy_5.png)] bg-cover bg-center bg-no-repeat w-full h-80 md:h-170 flex items-center">
                 <div className="absolute left-5 md:left-10 flex flex-col space-y-3 md:space-y-5 w-70 md:w-130">
@@ -150,13 +150,13 @@ const HomePage = () => {
             </div>
             
             <div className="bulk w-full flex justify-around">
-                <div className="w-[95vw] bg-light-purple h-70 md:h-140 mb-10 rounded-lg flex justify-between items-center">
-                    <div className='flex flex-col pl-3 md:pl-5 w-1/2 md:w-1/3 space-y-4'>
+                <div className="relative w-[95vw] max-w-234 bg-light-purple h-70 md:h-140 mb-10 rounded-lg flex justify-around items-center bg-[url(/src/assets/bulk/image.png)] bg-cover bg-center bg-no-repeat">
+                    <div className='flex flex-col pl-3 md:pl-5 w-4/5 text-slate-900 md:w-3/5 space-y-4 backdrop-blur-md bg-purple-200/70 border border-white/20 shadow-lg rounded-lg p-2'>
                         <span className='text-md md:text-2xl font-bold'>place a bulk order</span>
-                        <span className='text-sm md:text-md'>do you have a large event or party coming up or you just want a lot of flowers? Reach out and we'll make it happen</span>
+                        <span className='text-sm md:text-lg font-semibold'>do you have a large event or party coming up or you just want a lot of flowers? Reach out and we'll make it happen</span>
                         <span className="font-bold">learn more</span>
                     </div>
-                    <div className='h-full w-1/2 rounded-r-lg bg-[url(/src/assets/bulk/image.png)] bg-cover bg-center bg-no-repeat'> </div>
+                    <div className='h-full w-full rounded-r-lg bg-[url(/src/assets/bulk/image.png)] hidden bg-cover bg-center bg-no-repeat'> </div>
                 </div>
                 
                 
