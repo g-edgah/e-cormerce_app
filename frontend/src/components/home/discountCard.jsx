@@ -6,7 +6,7 @@ const DiscountCard = ({ percent, disc, discount, image, disc_a, disc_b, disc_c, 
             <span className="w-50 text-lg">{disc} <span className="font-bold">{percent}</span> {discount}</span>
             <span className="">
                 {disc_a} 
-                <span className="line-through decoration-bold font-bold">{disc_c}</span>
+                <span className="line-through decoration-2 font-bold">{disc_c}</span>
             </span>
             <span className="">
                 {disc_b}

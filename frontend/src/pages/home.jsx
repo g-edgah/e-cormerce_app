@@ -2,12 +2,13 @@ import FlowerCard from '../components/home/flowerCard.jsx'
 import OccassionCard from '../components/home/occassionCard.jsx'
 import DiscountCard from '../components/home/discountCard.jsx'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 const HomePage = () => {
     const sliderRef = useRef(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
+    const [showFirst, setShowFirst] = useState(true);
 
     const checkScroll = () => {
         if (!sliderRef.current) return;
@@ -29,6 +30,13 @@ const HomePage = () => {
         // Check arrows after scroll
         setTimeout(checkScroll, 300);
     };
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+        setShowFirst(prev => !prev);
+        }, 5000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className="flex flex-col space-y-15">
@@ -103,12 +111,26 @@ const HomePage = () => {
                 
                 
             </div>
-            <div className="flex flex-col spacing-y-4 items-center space-y-5">
+            <div className="flex flex-col spacing-y-4 items-center jsutify-around space-y-5">
                 <span className='font-bold text-lg md:text-xl'>featured discounts</span>
                
-                <div className="discounts flex space-x-5 w-full overflow-x-auto justify-center">
-                    <DiscountCard disc="get" discount="on your first bouquet" percent="20% OFF" image="bg-[url(/src/assets/discount/discount-7.jpeg)]"/>
-                    <DiscountCard disc="save" discount="per turlip" percent="ksh 5" image="bg-[url(/src/assets/discount/discount-1.jpeg)]" disc_a="was" disc_c="  ksh 30" disc_b="now" disc_d="  ksh 25"/>
+                <div className="discounts h-60 relative flex md:space-x-5 w-full justify-center items-center">
+                    
+                    <div className={`h-60 bg-gray-300 w-115 bg-[url(/src/assets/discount/discount-7.jpeg)] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center flex-col space-y-1 pl-10 inset-0 card1 ${showFirst ? 'flex' : 'hidden'}`}>
+                        <span className="w-50 text-lg">get <span className="font-bold">20% OFF</span> on your first bouquet</span>
+                    </div>
+
+                   <div className={`h-60 bg-gray-300 w-115 bg-[url(/src/assets/discount/discount-1.jpeg)] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center flex-col space-y-1 pl-10  card2 ${!showFirst ? 'flex' : 'hidden'}`}>
+                        <span className="w-50 text-lg">span <span className="font-bold">ksh 5</span> per turlip</span>
+                        <span className="">was 
+                            <span className="line-through decoration-2 font-bold">ksh 30</span>
+                        </span>
+                        <span className="">
+                            now
+                            <span className="font-bold">ksh 25</span>
+                        </span>
+                
+                    </div>
           
                 </div>
             </div>
