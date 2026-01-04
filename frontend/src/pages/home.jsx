@@ -33,7 +33,7 @@ const HomePage = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-        setShowFirst(prev => !prev);
+            setShowFirst(prev => !prev);
         }, 5000);
         return () => clearInterval(interval);
     }, []);
@@ -82,7 +82,7 @@ const HomePage = () => {
                         <FaAngleLeft className='h-7'/>
                     </button>
                     
-                    <div onScroll={checkScroll} ref={sliderRef} className="occassions bg-gray-400 flex px-0 space-x-0 w-[85vw] max-w-234 rounded-lg justify-around items-center overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory">
+                    <div onScroll={checkScroll} ref={sliderRef} className="occassions  flex px-0 space-x-0 w-[85vw] max-w-234 rounded-lg justify-around items-center overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory">
                         <OccassionCard className=" snap-center" text="those unforgateable milestones" title="graduation" image='bg-[url(/src/assets/graduation/grad-7.jpeg)]'/>
                         <OccassionCard className="snap-center" title="weddings" text="that special day" image='bg-[url(/src/assets/wedding/wed-3.jpeg)]'/>
                         <OccassionCard className="snap-center" title="birthdays" text="the day that's all about you" image='bg-[url(/src/assets/birthday/birth-17.jpeg)]'/>
@@ -111,16 +111,16 @@ const HomePage = () => {
                 
                 
             </div>
-            <div className="flex flex-col spacing-y-4 items-center jsutify-around space-y-5">
+            <div className="relative flex flex-col spacing-y-4 items-center jsutify-around space-y-5">
                 <span className='font-bold text-lg md:text-xl'>featured discounts</span>
                
-                <div className="discounts h-60 relative flex md:space-x-5 w-full justify-center items-center">
+                <div className=" discounts aspect-2/1 md:aspect-4/1 w-[90vw] flex md:space-x-5 md:px-4 relative md:w-full md:max-w-244 justify-center items-center">
                     
-                    <div className={`h-60 bg-gray-300 w-115 bg-[url(/src/assets/discount/discount-7.jpeg)] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center flex-col space-y-1 pl-10 inset-0 card1 ${showFirst ? 'flex' : 'hidden'}`}>
+                    <div className={`h-full w-full md:w-[calc(50%-0.75rem)] bg-[url(/src/assets/discount/discount-7.jpeg)] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center flex-col space-y-1 pl-10 z-20 absolute left-0 md:relative card1 transition-all duration-1500 ${showFirst ? 'opacity-100' : 'opacity-0 md:opacity-100'}`}>
                         <span className="w-50 text-lg">get <span className="font-bold">20% OFF</span> on your first bouquet</span>
                     </div>
 
-                   <div className={`h-60 bg-gray-300 w-115 bg-[url(/src/assets/discount/discount-1.jpeg)] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center flex-col space-y-1 pl-10  card2 ${!showFirst ? 'flex' : 'hidden'}`}>
+                   <div className={`h-full md:h-60 w-full md:w-[calc(50%-0.75rem)] bg-[url(/src/assets/discount/discount-1.jpeg)] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center flex-col space-y-1 pl-10 z-19 absolute md:relative left-0 card2 transition-all  duration-1500 ${!showFirst ? 'opacity-100' : 'opacity-0 md:opacity-100'}`}>
                         <span className="w-50 text-lg">span <span className="font-bold">ksh 5</span> per turlip</span>
                         <span className="">was 
                             <span className="line-through decoration-2 font-bold">ksh 30</span>
