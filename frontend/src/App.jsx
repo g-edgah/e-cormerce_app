@@ -15,7 +15,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<UserLayout/>}/>
+        <Route path='/*' element={<UserLayout/>}>
+          
+        </Route>
         <Route path='/admin' element={<AdminLayout/>}/>
         <Route path='/cart' element={<CartPage/>}/>
         <Route path='/profile' element={<ProfilePage/>}/>

@@ -4,7 +4,7 @@ import DiscountCard from '../components/home/discountCard.jsx'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { useRef, useState, useEffect } from 'react';
 
-const HomePage = () => {
+const HomePage = ({setPage}) => {
     const sliderRef = useRef(null);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
@@ -32,6 +32,9 @@ const HomePage = () => {
     };
 
     useEffect(() => {
+        //ensures page is set to home when navigation is through other channels apart from button clicking such as navigating back 
+        setPage("home")
+
         const interval = setInterval(() => {
             setShowFirst(prev => !prev);
         }, 5000);
@@ -54,7 +57,7 @@ const HomePage = () => {
             <div className="new flex flex-col items-center w-full space-y-5 justify-center">
                 <span className='font-bold text-lg md:text-xl'>new arrivals</span>
                 <div className="flex space-x-5">
-                    <FlowerCard name="yellow yellow" space-y-5price="4200" image="bouquets/image.png"/>
+                    <FlowerCard name="yellow yellow" space-y-5 price="4200" image="bouquets/image.png"/>
                     <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
                 </div>
                 
@@ -121,13 +124,13 @@ const HomePage = () => {
                     </div>
 
                    <div className={`h-full md:h-60 w-full md:w-[calc(50%-0.75rem)] bg-[url(/src/assets/discount/discount-1.jpeg)] bg-center bg-cover bg-no-repeat rounded-xl flex justify-center flex-col space-y-1 pl-10 z-19 absolute md:relative left-0 card2 transition-all  duration-1500 ${!showFirst ? 'opacity-100' : 'opacity-0 md:opacity-100'}`}>
-                        <span className="w-50 text-lg">span <span className="font-bold">ksh 5</span> per turlip</span>
+                        <span className="w-50 text-lg">save <span className="font-bold">ksh 5</span> per turlip</span>
                         <span className="">was 
-                            <span className="line-through decoration-2 font-bold">ksh 30</span>
+                            <span className="line-through decoration-2 font-bold"> ksh 30</span>
                         </span>
                         <span className="">
                             now
-                            <span className="font-bold">ksh 25</span>
+                            <span className="font-bold"> ksh 25</span>
                         </span>
                 
                     </div>
