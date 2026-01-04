@@ -1,5 +1,6 @@
 import FlowerCard from '../components/home/flowerCard.jsx'
 import OccassionCard from '../components/home/occassionCard.jsx'
+import DiscountCard from '../components/home/discountCard.jsx'
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { useRef, useState } from 'react';
 
@@ -30,7 +31,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="flex flex-col space-y-10">
+        <div className="flex flex-col space-y-15">
 
             <div className="bg-[url(/src/assets/bouquets/image_copy_5.png)] bg-cover bg-center bg-no-repeat w-full h-80 md:h-170 flex items-center">
                 <div className="absolute left-5 md:left-10 flex flex-col space-y-3 md:space-y-5 w-70 md:w-130">
@@ -43,16 +44,16 @@ const HomePage = () => {
             </div>
 
             <div className="new flex flex-col items-center w-full space-y-5 justify-center">
-                <span className=''>new arrivals</span>
+                <span className='font-bold text-lg md:text-xl'>new arrivals</span>
                 <div className="flex space-x-5">
-                    <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
+                    <FlowerCard name="yellow yellow" space-y-5price="4200" image="bouquets/image.png"/>
                     <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
                 </div>
                 
             </div>
 
-            <div className="relative flex flex-col spacing-y-4 items-center justify-around w-full px-5 md;px-15">
-                <span>flowers for every occassion</span>
+            <div className="relative flex flex-col spacing-y-4 items-center justify-around w-full px-5 md;px-15 space-y-5">
+                <span className='font-bold text-lg md:text-xl'>flowers for every occassion</span>
                 <div className="flex flex-row min-w-full justify-around items-center px-3">
                     <button onClick={() => scroll('left')} className='
                     z-10 
@@ -75,7 +76,7 @@ const HomePage = () => {
                     
                     <div onScroll={checkScroll} ref={sliderRef} className="occassions bg-gray-400 flex px-0 space-x-0 w-[85vw] max-w-234 rounded-lg justify-around items-center overflow-x-auto scroll-smooth scrollbar-hide snap-x snap-mandatory">
                         <OccassionCard className=" snap-center" text="those unforgateable milestones" title="graduation" image='bg-[url(/src/assets/graduation/grad-7.jpeg)]'/>
-                        <OccassionCard className="snap-center" title="wedding" text="that special day" image='bg-[url(/src/assets/wedding/wed-3.jpeg)]'/>
+                        <OccassionCard className="snap-center" title="weddings" text="that special day" image='bg-[url(/src/assets/wedding/wed-3.jpeg)]'/>
                         <OccassionCard className="snap-center" title="birthdays" text="the day that's all about you" image='bg-[url(/src/assets/birthday/birth-17.jpeg)]'/>
                         <OccassionCard className="snap-center" title="gifts" text="when you want to make her/him feel special" image='bg-[url(/src/assets/romantic/rom-4.png)]'/>
                     </div>
@@ -102,20 +103,18 @@ const HomePage = () => {
                 
                 
             </div>
-            <div className="flex flex-col spacing-y-4 items-center">
-                <span>featured discounts</span>
+            <div className="flex flex-col spacing-y-4 items-center space-y-5">
+                <span className='font-bold text-lg md:text-xl'>featured discounts</span>
                
-                <div className="occassions flex space-x-5 w-full overflow-x-auto justify-center">
-                
-                    <div className="rounded-md h-60 w-104 bg-gray-300"></div>
-                    <div className="rounded-md h-60 w-104 bg-gray-300"></div>
-                    
-                    
+                <div className="discounts flex space-x-5 w-full overflow-x-auto justify-center">
+                    <DiscountCard disc="get" discount="on your first bouquet" percent="20% OFF" image="bg-[url(/src/assets/discount/discount-7.jpeg)]"/>
+                    <DiscountCard disc="save" discount="per turlip" percent="ksh 5" image="bg-[url(/src/assets/discount/discount-1.jpeg)]" disc_a="was" disc_c="  ksh 30" disc_b="now" disc_d="  ksh 25"/>
+          
                 </div>
             </div>
             
             <div className="popular flex flex-col space-y-5 items-center">
-                <span>flying off the shelves</span>
+                <span className='font-bold text-lg md:text-xl'>flying off the shelves</span>
                 <div className="flower-row flex gap-5 w-full  flex-wrap justify-center items-center max-w-300">
                 
                     <FlowerCard name="yellow yellow" price="4200" image="bouquets/image.png"/>
